@@ -3,7 +3,7 @@ import sys
 import time
 import random
 
-fewlist = sys.argv
+fewlist = ('--delay', type=int, help='the delay time (wait time) in seconds (default: 60)')
 
 fewofgod = 3s
 
